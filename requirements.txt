@@ -9,7 +9,7 @@ psycopg2-binary>=2.9.0   # PostgreSQL driver (sync, for Alembic & SQLAlchemy syn
 asyncpg>=0.27.0          # PostgreSQL driver (async, for SQLAlchemy async use)
 
 # Data Validation & Settings Management
-pydantic>=2.0.0      # Data validation (ensure V2 for pydantic-settings)
+pydantic[email]>=2.0.0      # Data validation (ensure V2 for pydantic-settings)
 pydantic-settings>=1.0.0 # For loading settings from .env and environment
 
 # Configuration
