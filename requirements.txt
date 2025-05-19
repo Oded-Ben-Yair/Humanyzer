@@ -30,6 +30,7 @@ redis>=4.5.0
 
 # Monitoring
 prometheus-client>=0.17.0
+prometheus-fastapi-instrumentator>=6.0.0 
 
 # Data Science & Visualization Stack (from your original list)
 streamlit>=1.10.0
