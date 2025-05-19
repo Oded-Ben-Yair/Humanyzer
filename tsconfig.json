@@ -7,20 +7,40 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "noEmit": true,
+    "strict": false, // Consider setting to true for stricter type checking in the future
+    "noEmit": true,    // Correct for Next.js (Babel handles transpilation)
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler", // Or "node"; "bundler" is often recommended for modern setups
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve", // Correct for Next.js
+    "plugins": [       // Often added by Next.js for SWC/Turbopack enhancements
+      {
+        "name": "next"
+      }
+    ],
+    // --- ADDED FOR PATH ALIASES ---
+    "baseUrl": ".", // Sets the base directory for module resolution (project root)
+    "paths": {
+      "@/*": ["src/*"], // Maps '@/*' to 'src/*'
+      "@/components/*": ["src/components/*"], // Example more specific alias
+      "@/contexts/*": ["src/contexts/*"],     // Example more specific alias
+      "@/hooks/*": ["src/hooks/*"],           // Example more specific alias
+      "@/lib/*": ["src/lib/*"],               // Example more specific alias
+      "@/pages/*": ["src/pages/*"],           // Example more specific alias
+      "@/public/*": ["public/*"],             // Example alias for public assets
+      "@/styles/*": ["src/styles/*"]          // Example more specific alias
+      // Add other specific aliases if you use them
+    }
+    // --- END OF ADDED FOR PATH ALIASES ---
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts" // Often added by Next.js
   ],
   "exclude": [
     "node_modules"
