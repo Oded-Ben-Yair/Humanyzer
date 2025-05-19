@@ -1,0 +1,506 @@
+/* Humanyze Mobile Responsiveness CSS - Improved Version */
+
+/* Mobile Breakpoints */
+/* 
+  - Small phones: max-width: 480px
+  - Large phones/Small tablets: max-width: 768px
+  - Tablets: max-width: 992px
+*/
+
+/* Base Mobile Adjustments */
+@media (max-width: 992px) {
+  /* Reduce padding for main container */
+  div.block-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Adjust header sizes */
+  .header h1, .humanyze-header h1, .logo-container h1 {
+    font-size: 2rem;
+  }
+  
+  .header h3, .tagline {
+    font-size: 0.9rem;
+  }
+  
+  /* Adjust section titles */
+  .page-title, h2.page-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title, h3.section-title {
+    font-size: 1.2rem;
+  }
+  
+  /* Improve button spacing */
+  .stButton > button {
+    margin-bottom: 0.5rem;
+    min-height: 44px; /* Improved touch target */
+  }
+  
+  /* Add smooth transitions */
+  * {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Small Tablets and Large Phones */
+@media (max-width: 768px) {
+  /* Further reduce header size */
+  .header h1, .humanyze-header h1, .logo-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Adjust text areas for better mobile experience */
+  .stTextArea textarea {
+    min-height: 150px !important;
+    font-size: 1rem !important; /* Increased for readability */
+    padding: 12px !important;
+  }
+  
+  /* Improve form elements spacing */
+  .stTextInput input, .stSelectbox > div, .stNumberInput input {
+    min-height: 44px; /* Improved touch target */
+    margin-bottom: 0.75rem;
+    font-size: 1rem !important; /* Increased for readability */
+  }
+  
+  /* Adjust metrics display */
+  .stMetric {
+    padding: 0.75rem !important;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Improve tab navigation */
+  .stTabs [data-baseweb="tab"] {
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+    min-height: 44px; /* Improved touch target */
+  }
+  
+  /* Adjust pattern boxes for better readability */
+  .pattern-box, .pattern-card {
+    padding: 1rem !important;
+  }
+  
+  /* Improve navigation container */
+  .navigation-container {
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .navigation-container button {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0.75rem !important;
+    min-height: 44px; /* Improved touch target */
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  /* Adjust stat cards */
+  .stat-card {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
+  /* Adjust profile cards */
+  .profile-card {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  /* Improved sidebar for mobile */
+  [data-testid="stSidebar"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80% !important;
+    max-width: 300px !important;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-testid="stSidebar"].visible {
+    transform: translateX(0);
+  }
+  
+  /* Add sidebar toggle button */
+  .sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  /* Add overlay when sidebar is open */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Adjust main content when sidebar is open */
+  .main-content {
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 80%;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  /* Minimal header for very small screens */
+  .header h1, .humanyze-header h1, .logo-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header h3, .tagline {
+    font-size: 0.8rem;
+  }
+  
+  /* Optimize text areas for small screens */
+  .stTextArea textarea {
+    min-height: 120px !important;
+    font-size: 1rem !important; /* Keep readable size */
+  }
+  
+  /* Adjust buttons for better touch targets */
+  .stButton > button {
+    width: 100% !important;
+    min-height: 48px !important; /* Even larger touch target */
+    font-size: 1rem !important;
+  }
+  
+  /* Simplify navigation */
+  .navigation-container button {
+    font-size: 0.9rem !important;
+    padding: 0.5rem !important;
+    width: 100%;
+  }
+  
+  /* Optimize form elements */
+  .stForm > div {
+    padding: 0.75rem !important;
+  }
+  
+  /* Adjust expanders */
+  .streamlit-expanderHeader {
+    font-size: 1rem !important;
+    padding: 0.75rem !important;
+    min-height: 44px; /* Improved touch target */
+  }
+  
+  /* Optimize sidebar */
+  [data-testid="stSidebar"] {
+    width: 85% !important;
+  }
+  
+  /* Adjust metrics for very small screens */
+  .stMetric [data-testid="stMetricLabel"] {
+    font-size: 0.9rem !important;
+  }
+  
+  .stMetric [data-testid="stMetricValue"] {
+    font-size: 1.3rem !important;
+  }
+  
+  /* Stack all columns */
+  .row-widget.stHorizontal {
+    flex-direction: column;
+  }
+  
+  .row-widget.stHorizontal > div {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Specific Component Adjustments */
+
+/* Text comparison containers (original/humanized) */
+@media (max-width: 768px) {
+  .text-comparison {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  
+  .text-comparison h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Stack comparison columns on mobile */
+  .text-comparison-container .row-widget.stHorizontal {
+    flex-direction: column;
+  }
+  
+  .text-comparison-container .row-widget.stHorizontal > div {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Analysis section */
+@media (max-width: 768px) {
+  .analysis-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+  
+  .ai-likelihood-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .likelihood-indicator {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .likelihood-value {
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Stack metrics on mobile */
+  .metrics-container .row-widget.stHorizontal {
+    flex-direction: column;
+  }
+  
+  .metrics-container .row-widget.stHorizontal > div {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Profile editor */
+@media (max-width: 768px) {
+  .profile-form-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .profile-form-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+  }
+  
+  /* Stack form columns on mobile */
+  .profile-form-section .row-widget.stHorizontal {
+    flex-direction: column;
+  }
+  
+  .profile-form-section .row-widget.stHorizontal > div {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Sidebar adjustments */
+@media (max-width: 768px) {
+  .sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--primary-light);
+  }
+  
+  .profile-selector {
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-details {
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    background-color: rgba(98, 0, 234, 0.05);
+    border-radius: 6px;
+  }
+  
+  .basic-style-options, 
+  .processing-options,
+  .profile-actions {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--primary-light);
+  }
+  
+  /* Add close button to sidebar */
+  .sidebar-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .sidebar-close:hover {
+    background-color: rgba(98, 0, 234, 0.1);
+  }
+}
+
+/* Footer adjustments */
+@media (max-width: 768px) {
+  .footer, .trust-elements {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* Improve touch targets for interactive elements */
+@media (max-width: 768px) {
+  /* Make radio buttons and checkboxes easier to tap */
+  .stRadio [data-baseweb="radio"] label,
+  .stCheckbox [data-baseweb="checkbox"] label {
+    min-height: 32px;
+    padding: 6px 0;
+  }
+  
+  /* Improve select dropdown */
+  .stSelectbox [data-baseweb="select"] {
+    min-height: 44px;
+  }
+  
+  /* Adjust sliders for touch */
+  .stSlider [data-baseweb="slider"] div[role="slider"] {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Improve slider track */
+  .stSlider [data-baseweb="slider"] div[data-testid="stSliderBase"] {
+    height: 8px;
+  }
+}
+
+/* Add loading animations */
+@media (max-width: 768px) {
+  /* Pulse animation for loading states */
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  .loading-indicator {
+    animation: pulse 1.5s infinite;
+    background-color: var(--primary-light);
+    border-radius: 6px;
+    height: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Skeleton loaders */
+  .skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+/* Fix for overlapping elements in mobile view */
+@media (max-width: 768px) {
+  /* Add spacing between stacked columns */
+  .row-widget.stHorizontal > div {
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure proper spacing for stacked elements */
+  .stHorizontal > div {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Fix for button groups */
+  .stButton {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Add smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}

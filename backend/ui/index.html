@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanyze API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .api-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .endpoint {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+        }
+        .endpoint code {
+            font-family: monospace;
+            background-color: #d6d8db;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Humanyze API</h1>
+        <p>Welcome to the Humanyze API server. This API provides access to AI content humanization services.</p>
+        
+        <div class="api-info">
+            <h2>API Documentation</h2>
+            <p>For detailed API documentation, visit: <a href="/docs">/docs</a> or <a href="/redoc">/redoc</a></p>
+            
+            <h3>Main Endpoints:</h3>
+            <div class="endpoint">
+                <code>GET /api/health</code> - Check API health status
+            </div>
+            <div class="endpoint">
+                <code>POST /api/auth/login</code> - User authentication
+            </div>
+            <div class="endpoint">
+                <code>POST /api/auth/register</code> - User registration
+            </div>
+            <div class="endpoint">
+                <code>POST /api/humanize</code> - Humanize AI-generated content
+            </div>
+        </div>
+    </div>
+</body>
+</html>

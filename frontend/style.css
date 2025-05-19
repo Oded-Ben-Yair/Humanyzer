@@ -1,0 +1,429 @@
+/* Humanyze UI Styles - Improved Version */
+
+/* Brand Colors */
+:root {
+    --primary-color: #6200EA; /* Deep purple */
+    --primary-dark: #5000c9;
+    --primary-light: #9d46ff;
+    --secondary-color: #00BCD4; /* Teal */
+    --secondary-dark: #008ba3;
+    --secondary-light: #62efff;
+    --accent-color: #FFC107; /* Amber */
+    --accent-dark: #c79100;
+    --accent-light: #fff350;
+    --text-color: #333333;
+    --background-color: #f5f7fa;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: rgba(98, 0, 234, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.header h1 {
+    color: var(--primary-color);
+    font-family: 'Source Serif Pro', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--primary-light);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    background-color: rgba(98, 0, 234, 0.03);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(98, 0, 234, 0.2) !important;
+    min-height: 44px !important;
+}
+
+.stButton > button:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(98, 0, 234, 0.3) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(98, 0, 234, 0.2) !important;
+}
+
+/* Secondary Button */
+.secondary-button .stButton > button {
+    background-color: var(--secondary-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 188, 212, 0.2) !important;
+}
+
+.secondary-button .stButton > button:hover {
+    background-color: var(--secondary-dark) !important;
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3) !important;
+}
+
+/* Accent Button */
+.accent-button .stButton > button {
+    background-color: var(--accent-color) !important;
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.2) !important;
+}
+
+.accent-button .stButton > button:hover {
+    background-color: var(--accent-dark) !important;
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3) !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 1rem;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 3rem;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 6px 6px 0 0;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: var(--primary-color);
+    background-color: rgba(98, 0, 234, 0.05);
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary-light) !important;
+    color: white !important;
+}
+
+.stTabs [aria-selected="true"]::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding: 1rem 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Text Areas */
+.stTextArea textarea {
+    border-radius: 6px;
+    border: 1px solid var(--primary-light);
+    padding: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    min-height: 150px;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(98, 0, 234, 0.2);
+}
+
+/* Select Box */
+.stSelectbox [data-baseweb="select"] {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.stSelectbox [data-baseweb="select"]:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(98, 0, 234, 0.2);
+}
+
+/* Radio Buttons */
+.stRadio [data-baseweb="radio"] {
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.stRadio [data-baseweb="radio"] label {
+    min-height: 24px;
+    padding: 4px 0;
+}
+
+/* Analysis Results */
+.metric-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.metric-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.pattern-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.pattern-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--primary-light);
+}
+
+.pattern-type {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.pattern-severity {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Spinner */
+.stSpinner > div {
+    border-color: var(--primary-color) !important;
+    border-top-color: transparent !important;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: rgba(98, 0, 234, 0.05);
+    border-radius: 6px;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.streamlit-expanderHeader:hover {
+    background-color: rgba(98, 0, 234, 0.1);
+}
+
+/* Custom Streamlit Overrides */
+div.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1200px;
+}
+
+/* AI Likelihood Indicator */
+.ai-likelihood-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.likelihood-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.likelihood-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.likelihood-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+}
+
+.likelihood-explanation {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+/* Text Comparison */
+.text-comparison-container {
+    margin-bottom: 2rem;
+}
+
+.text-comparison-note {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.text-comparison {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.text-comparison h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Source Serif Pro', serif;
+}
+
+/* Profile Form */
+.profile-form-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header h3 {
+        font-size: 1rem;
+    }
+    
+    .stButton > button {
+        width: 100% !important;
+        padding: 0.5rem 1rem !important;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .pattern-type {
+        font-size: 1rem;
+    }
+    
+    .text-comparison {
+        padding: 1rem;
+    }
+    
+    .text-comparison h4 {
+        font-size: 1.1rem;
+    }
+    
+    /* Improve sidebar on mobile */
+    [data-testid="stSidebar"] {
+        position: absolute;
+        z-index: 1000;
+        width: 80% !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    [data-testid="stSidebar"].visible {
+        transform: translateX(0);
+    }
+    
+    /* Add sidebar toggle button */
+    .sidebar-toggle {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1001;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .stTextArea textarea {
+        min-height: 120px;
+    }
+    
+    .pattern-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

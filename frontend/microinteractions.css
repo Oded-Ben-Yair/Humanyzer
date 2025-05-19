@@ -1,0 +1,189 @@
+/* Microinteractions CSS for Humanyzer */
+
+/* Focus states for better keyboard navigation */
+input:focus, 
+textarea:focus, 
+select:focus, 
+button:focus,
+[data-baseweb="select"]:focus-within,
+[data-baseweb="input"]:focus-within {
+    outline: 2px solid var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(98, 0, 234, 0.2) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Hover states for interactive elements */
+.stButton > button:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(98, 0, 234, 0.3) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(98, 0, 234, 0.2) !important;
+    transition: all 0.1s ease-in-out !important;
+}
+
+/* Form elements hover states */
+.stTextInput input:hover,
+.stTextArea textarea:hover,
+.stSelectbox [data-baseweb="select"]:hover,
+.stNumberInput input:hover {
+    border-color: var(--primary-color) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Checkbox and radio hover states */
+.stCheckbox [data-baseweb="checkbox"]:hover,
+.stRadio [data-baseweb="radio"]:hover {
+    background-color: rgba(98, 0, 234, 0.05) !important;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Loading animations */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.loading-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Spinner enhancements */
+.stSpinner > div {
+    border-color: var(--primary-color) !important;
+    border-top-color: transparent !important;
+    animation: spinner-border 0.75s linear infinite !important;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+/* Button loading state */
+.stButton > button.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.stButton > button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+/* Form feedback animations */
+@keyframes success-feedback {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.success-feedback {
+    animation: success-feedback 0.3s ease-in-out;
+}
+
+@keyframes error-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.error-feedback {
+    animation: error-shake 0.4s ease-in-out;
+}
+
+/* Tooltip animations */
+@keyframes tooltip-appear {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--primary-dark);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    animation: tooltip-appear 0.3s ease-in-out;
+}
+
+/* Input validation feedback */
+.input-valid {
+    border-color: var(--success-color) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232ecc71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 40px !important;
+}
+
+.input-invalid {
+    border-color: var(--danger-color) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23e74c3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 40px !important;
+}
+
+/* Progress indicators */
+.progress-bar-container {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(98, 0, 234, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+@keyframes progress-indeterminate {
+    0% { left: -35%; right: 100%; }
+    60% { left: 100%; right: -90%; }
+    100% { left: 100%; right: -90%; }
+}
+
+.progress-indeterminate .progress-bar {
+    position: relative;
+    animation: progress-indeterminate 2s infinite ease-in-out;
+    width: 35%;
+}

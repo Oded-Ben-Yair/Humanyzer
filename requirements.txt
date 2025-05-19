@@ -1,0 +1,13 @@
+streamlit>=1.10.0
+pandas
+numpy
+altair
+plotly
+fastapi
+sqlalchemy
+pydantic
+python-jose[cryptography]
+uvicorn
+python-multipart
+redis
+prometheus-client
