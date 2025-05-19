@@ -1,13 +1,43 @@
+# Core Web Framework & ASGI Server
+fastapi>=0.100.0 # Consider specifying a recent stable version
+uvicorn[standard]>=0.20.0 # Includes httptools and watchfiles
+
+# Database & ORM
+sqlalchemy>=2.0.0 # Consider specifying a recent stable version of SQLAlchemy 2.x
+alembic>=1.10.0
+psycopg2-binary>=2.9.0   # PostgreSQL driver (sync, for Alembic & SQLAlchemy sync use)
+asyncpg>=0.27.0          # PostgreSQL driver (async, for SQLAlchemy async use)
+
+# Data Validation & Settings Management
+pydantic>=2.0.0      # Data validation (ensure V2 for pydantic-settings)
+pydantic-settings>=1.0.0 # For loading settings from .env and environment
+
+# Configuration
+python-dotenv>=1.0.0     # For loading .env files
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0 # For JWTs
+passlib[bcrypt]>=1.7.4          # For hashing passwords (very common with FastAPI auth)
+
+# File Uploads for FastAPI
+python-multipart>=0.0.5
+
+# AWS Integration
+boto3>=1.28.0             # AWS SDK for Python (for Bedrock, S3, etc.)
+
+# Caching / Message Queues (if using Redis for this)
+redis>=4.5.0
+
+# Monitoring
+prometheus-client>=0.17.0
+
+# Data Science & Visualization Stack (from your original list)
 streamlit>=1.10.0
-pandas
-numpy
-altair
-plotly
-fastapi
-sqlalchemy
-pydantic
-python-jose[cryptography]
-uvicorn
-python-multipart
-redis
-prometheus-client
+pandas>=1.5.0 # Consider specifying recent stable versions
+numpy>=1.23.0
+altair>=5.0.0
+plotly>=5.10.0
+
+# Optional: For Celery or other background task systems if you plan to use them
+# celery>=5.2.0
+# flower>=1.0.0 # For monitoring Celery
